@@ -2,9 +2,12 @@ const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({ path: path.resolve(__dirname + './../.env') });
 const express = require("express");
+const bodyParser = require('body-parser');
 const router = require("./routes");
 
 const app = express();
+app.use(bodyParser.json());
+
 const PORT = process.env.PORT || 3001;
 
 app.get("/", (req, res) => {
