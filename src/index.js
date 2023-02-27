@@ -4,6 +4,7 @@ dotenv.config({ path: path.resolve(__dirname + './../.env') });
 const express = require("express");
 const bodyParser = require('body-parser');
 const router = require("./routes");
+const serverless = require('serverless-http');
 
 const app = express();
 app.use(bodyParser.json());
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 
 app.use("/api", router);
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is listening on port ${PORT}`);
+// });
+
+module.exports.handler = serverless(app);
