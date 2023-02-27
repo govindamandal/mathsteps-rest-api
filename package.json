@@ -4,8 +4,9 @@
   "description": "Math Steps https://github.com/google/mathsteps",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/.bin/netlify-lambda serve src",
-    "build": "node ./node_modules/.bin/netlify-lambda build src"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,13 @@
     "url": "https://github.com/govindamandal/mathsteps-rest-api/issues"
   },
   "homepage": "https://github.com/govindamandal/mathsteps-rest-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mathsteps": "^0.2.0",
-    "netlify-lambda": "^2.0.16",
-    "serverless-http": "^3.1.1"
+    "mathsteps": "^0.2.0"
   }
 }
